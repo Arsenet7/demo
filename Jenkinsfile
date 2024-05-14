@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'agent2' }
+    agent any
 
     parameters {
         string(name: 'GIT_BRANCH', defaultValue: 'main', description: 'Enter the GitHub branch name')
