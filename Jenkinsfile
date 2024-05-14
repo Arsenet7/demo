@@ -61,6 +61,7 @@ pipeline {
                 sh "docker run -d -p ${params.DOCKER_PORT}:80 ${DOCKER_IMAGE}"
                 sh 'docker ps'
                 sh 'docker images'
+                sh 'docker ps -a'
             }
         }
     }
