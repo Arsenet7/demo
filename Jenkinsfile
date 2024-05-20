@@ -36,6 +36,7 @@ pipeline {
                 git url: 'https://github.com/Royce237/s5royce.git', branch: "${params.GIT_BRANCH}"
             }
         }
+           
 
         stage('Build Docker Image') {
             steps {
@@ -63,6 +64,15 @@ pipeline {
                 sh 'docker ps'
                 sh 'docker images'
                 sh 'docker ps -a'
+            }
+        }
+         stage('slack notification') {
+            steps {
+                slackSend channel: 'jenkins-notification-ars',
+                    color: 'good', 
+                    message: 'welcome to jenkins slack', 
+                    teamDomain: 'Devops easy learning',
+                    tokenCredentialId: 'slack webhook-id'
             }
         }
     }
