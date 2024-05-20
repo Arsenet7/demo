@@ -73,7 +73,7 @@ pipeline {
                     channel: 'jenkins-notification-ars',
                     color: 'good',
                     message: 'welcome to jenkins slack',
-                    teamDomain: 'Devops easy learning',
+                    teamDomain: 'devopseasylearning',
                     tokenCredentialId: 'slack webhook-id'
                 )
             }
