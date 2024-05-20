@@ -43,6 +43,7 @@ pipeline {
                     // Ensure Jenkins has permission to interact with Docker
                     sh 'sudo chmod 666 /var/run/docker.sock'
                     sh "docker build -t ${DOCKER_IMAGE} ."
+                    sh "docker images"
                 }
             }
         }
