@@ -66,14 +66,18 @@ pipeline {
                 sh 'docker ps -a'
             }
         }
-         stage('slack notification') {
+       
+        stage('slack notification') {
             steps {
-                slackSend channel: 'jenkins-notification-ars',
-                    color: 'good', 
-                    message: 'welcome to jenkins slack', 
+                slackSend (
+                    channel: 'jenkins-notification-ars',
+                    color: 'good',
+                    message: 'welcome to jenkins slack',
                     teamDomain: 'Devops easy learning',
                     tokenCredentialId: 'slack webhook-id'
+                )
             }
         }
+    
     }
 }
